@@ -1,0 +1,17 @@
+<body>
+<form method="get">
+    <input type="text" name="servicename" value="" />
+    <input type="submit" value="Search" />
+</form>
+
+{% for n in services %}
+  <h1>{{n.title}}</h1>
+<h1>{{n.content}}</h1>
+<a href="{% url 'product-detail' n.id %}" class="btn">
+<img src="{{n.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+</a>
+{% empty %}
+NO data found
+{% endfor %}
+</body>
+</html>

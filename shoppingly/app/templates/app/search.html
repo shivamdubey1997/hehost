@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  action="" method="GET">
+    <input type="text" name="q"/>
+    <input type="submit" />
+</form>
+
+{% if product %}
+<h1>{{product.title}}</h1>
+<h1>{{product.content}}</h1>
+<a href="{% url 'product-detail' product.id %}" class="btn">
+<img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+</a>
+
+{% endif %}
+
+</body>
+</html>
